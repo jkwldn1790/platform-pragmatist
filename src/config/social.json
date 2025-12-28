@@ -1,0 +1,14 @@
+{
+  "main": [
+    {
+      "name": "github",
+      "icon": "FaGithub",
+      "link": "https://github.com/jkwldn1790"
+    },
+    {
+      "name": "linkedin",
+      "icon": "FaLinkedin",
+      "link": "https://www.linkedin.com/in/jake-walden-25970228"
+    }
+  ]
+}
