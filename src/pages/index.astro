@@ -1,7 +1,9 @@
 ---
+import BlogCard from "@/components/BlogCard.astro";
 import ImageMod from "@/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
-import { getListPage } from "@/lib/contentParser.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
 import Testimonial from "@/partials/Testimonial.astro";
@@ -10,6 +12,8 @@ import { FaCheck } from "react-icons/fa";
 const homepage = await getListPage("homepage", "-index");
 const call_to_action = await getListPage("ctaSection", "call-to-action");
 const testimonial = await getListPage("testimonialSection", "testimonial");
+const posts = await getSinglePage("blog");
+const recentPosts = sortByDate(posts).slice(0, 3);
 
 const { banner, features } = homepage.data;
 ---
@@ -98,6 +102,30 @@ const { banner, features } = homepage.data;
     ))
   }
   <!-- /Features -->
+
+  <!-- Recent Posts -->
+  {
+    recentPosts.length > 0 && (
+      <section class="section">
+        <div class="container">
+          <div class="mb-12 text-center">
+            <h2>Recent Posts</h2>
+          </div>
+          <div class="row">
+            {recentPosts.map((post) => (
+              <div class="mb-14 md:col-6 lg:col-4">
+                <BlogCard data={post} />
+              </div>
+            ))}
+          </div>
+          <div class="text-center">
+            <a class="btn btn-primary" href="/blog">All Posts</a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+  <!-- /Recent Posts -->
 
   <Testimonial testimonial={testimonial} />
   <CallToAction call_to_action={call_to_action} />
