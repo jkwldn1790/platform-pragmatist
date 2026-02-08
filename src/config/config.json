@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Platform Pragmatist",
-    "base_url": "https://astroplate.netlify.app",
+    "base_url": "https://platform-pragmatist.netlify.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -51,8 +51,8 @@
   },
 
   "metadata": {
-    "meta_author": "zeon.studio",
+    "meta_author": "Jake Walden",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_description": "A pragmatic approach to platform engineering — insights on Kubernetes, DevOps, SRE, and building internal platforms from Jake Walden."
   }
 }
