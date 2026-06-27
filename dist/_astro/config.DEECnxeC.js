@@ -1,0 +1,1 @@
+const e={content:"<span class='text-center block'>♥️ Loving Astroplate? <a class='underline' href='https://github.com/zeon-studio/astroplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",expire_days:7},n={enable:!1},t={announcement:e,disqus:n};export{t as c};
